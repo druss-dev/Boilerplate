@@ -26,7 +26,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/druss/Repos/Boilerplate/PatientApiService/PatientApiService.csproj": {
+                "projectPath": "/Users/druss/Repos/Boilerplate/PatientApiService/PatientApiService.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -90,6 +94,74 @@
             "Serilog.Sinks.Console": {
               "target": "Package",
               "version": "[4.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet6/x64/sdk/6.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/druss/Repos/Boilerplate/PatientApiService/PatientApiService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/druss/Repos/Boilerplate/PatientApiService/PatientApiService.csproj",
+        "projectName": "Caerus.Import.External.PatientApiService",
+        "projectPath": "/Users/druss/Repos/Boilerplate/PatientApiService/PatientApiService.csproj",
+        "packagesPath": "/Users/druss/.nuget/packages/",
+        "outputPath": "/Users/druss/Repos/Boilerplate/PatientApiService/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/druss/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://loyalhealth.pkgs.visualstudio.com/_packaging/LoyalNuget/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Loyal.Core": {
+              "target": "Package",
+              "version": "[2022.12.9.3, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [

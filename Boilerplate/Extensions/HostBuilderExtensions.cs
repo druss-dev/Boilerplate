@@ -36,7 +36,7 @@ public static class HostBuilderExtensions
         builder.ConfigureServices((context, services) =>
         {
             services.AddConfigurationOptions(context.Configuration)
-                //.AddExternalServices(context.Configuration)
+                .AddExternalServices(context.Configuration)
                 .AddInternalServices()
                 .AddDataRepositories();
         });
