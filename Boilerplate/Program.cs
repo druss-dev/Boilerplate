@@ -1,10 +1,14 @@
 ﻿using Boilerplate.Extensions;
 using Boilerplate.Services.Thing;
 using Boilerplate.Utilities;
-using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Builder;
 
-var builder = HostBuilderExtensions.CreateHostBuilder(args);
-var application = builder.Build();
+var builder = WebApplication.CreateBuilder(args);
+builder.AddConfigurationOptions();
+builder.AddLogging();
+builder.AddInternalServices();
+
+//var application = builder.Build();
 
 // gets instance of a service
 var thingServiceType = Type.GetType(ServiceType.ThingService);
