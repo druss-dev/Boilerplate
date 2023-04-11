@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Boilerplate": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "APPLICATION__NAME": "Boilerplate",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

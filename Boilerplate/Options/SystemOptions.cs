@@ -5,7 +5,7 @@ namespace Boilerplate.Options;
 
 public class SystemOptions
 {
-    [ConfigurationKeyName("DOTNET_ENVIRONMENT")]
+    [ConfigurationKeyName("ASPNETCORE_ENVIRONMENT")]
     [Required(AllowEmptyStrings = false)]
     public string? Environment { get; set; }
     
