@@ -5,7 +5,9 @@
       "commandName": "Project",
       "environmentVariables": {
         "APPLICATION__NAME": "Boilerplate",
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "KIT_CONNECTION_STRING": "Data Source=kit-current.epic.com;Database=Caboodle_Current;Integrated Security=false;User ID=Kit-v-3957645-001;Password=YkzC9qnwAqS68aM5;",
+        "DATAVIEW_CONNECTION_STRING": "scheme=https;account=ypa05420;host=ypa05420.snowflakecomputing.com;warehouse=AH_WAREHOUSE;user=loyal_health;password=B8GVUdZkqyNVP8RS;role=PUBLIC;database=ATHENAHEALTH;"
       }
     }
   }

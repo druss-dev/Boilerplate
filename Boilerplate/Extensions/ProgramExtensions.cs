@@ -1,7 +1,9 @@
+using ApolloFramework.Extensions;
 using Azure.Identity;
 using Boilerplate.Options;
 using Boilerplate.Repositories.Client;
 using Boilerplate.Repositories.Thingabase;
+using Boilerplate.Services.Apollo;
 using Boilerplate.Services.Thing;
 using Boilerplate.Utilities;
 using Microsoft.AspNetCore.Builder;
@@ -36,16 +38,23 @@ public static class ProgramExtensions
             .ValidateDataAnnotations()
             .ValidateOnStart();
     }
-
-    /*
+    
+    /// <summary>
+    /// configures all application dependent services
+    /// </summary>
+    public static void AddDependentServices(this WebApplicationBuilder builder)
+    {
+        builder.AddInternalServices();
+        builder.AddExternalServices();
+    }
+    
     /// <summary>
     /// configures all externally sourced services to the dependency injection container
     /// </summary>
-    public static IServiceCollection AddExternalServices(this IServiceCollection services, IConfiguration configuration)
+    public static void AddExternalServices(this WebApplicationBuilder builder)
     {
-        return services;
+        builder.Services.AddApollo();
     }
-    */
     
     /// <summary>
     /// configures all internally sourced services to the dependency injection container
@@ -53,6 +62,7 @@ public static class ProgramExtensions
     public static void AddInternalServices(this WebApplicationBuilder builder)
     {
         builder.Services.AddTransient<IThingService, ThingService>();
+        builder.Services.AddTransient<IApolloService, ApolloService>();
     }
     
     /// <summary>

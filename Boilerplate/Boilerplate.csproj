@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="ApolloFramework" Version="2022.8.15.2" />
         <PackageReference Include="Dapper" Version="2.0.123" />
         <PackageReference Include="Loyal.Core" Version="2023.3.16.4" />
         <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
