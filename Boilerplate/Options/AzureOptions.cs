@@ -7,12 +7,12 @@ public class AzureOptions
 {
     public const string Azure = nameof(Azure);
 
-    [Required(AllowEmptyStrings = false)]
+    //[Required(AllowEmptyStrings = false)]
     public string? CmkClientId { get; set; }
 
-    [Required(AllowEmptyStrings = false)] 
+    //[Required(AllowEmptyStrings = false)] 
     public string? CmkClientSecret { get; set; }
 
-    [Required(AllowEmptyStrings = false)]
+    //[Required(AllowEmptyStrings = false)]
     public string? CmkTenantId { get; set; }
 }
