@@ -10,10 +10,10 @@ public class SystemOptions
     public string? Environment { get; set; }
     
     [ConfigurationKeyName("SQL_CONNECTION_STRING")]
-    [Required(AllowEmptyStrings = false)]
+    //[Required(AllowEmptyStrings = false)]
     public string? SqlConnectionString { get; set; }
     
     [ConfigurationKeyName("SQL_MASTER_CONNECTION_STRING")]
-    [Required(AllowEmptyStrings = false)]
+    //[Required(AllowEmptyStrings = false)]
     public string? SqlMasterConnectionString { get; set; }
 }

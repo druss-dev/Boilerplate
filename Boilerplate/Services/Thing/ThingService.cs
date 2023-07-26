@@ -1,15 +1,27 @@
+using Caerus.Client;
+using Caerus.Client.Internal;
+using request = Caerus.Client.Models.Request;
+using common = Caerus.Common.Models.Segmentation;
+
 namespace Boilerplate.Services.Thing;
 
 public class ThingService : IThingService
 {
-    // this is where we fetch something from the database or do some logic
-    public Task<Models.Thing> GetTheThing()
+    private readonly ICaerusClient _caerusClient;
+    private readonly IInternalClient _caerusInternalClient;
+    
+    public ThingService(ICaerusClient caerusClient, IInternalClient caerusInternalClient)
     {
-        var thing = new Models.Thing
-        {
-            StringyThing = "I am the thing we call string."
-        };
+        _caerusClient = caerusClient;
+        _caerusInternalClient = caerusInternalClient;
+    }
 
-        return Task.FromResult(thing);
+    public async Task TestStuffHere()
+    {
+        while (true)
+        {
+            //break here and do something 
+            await Task.CompletedTask;
+        }
     }
 }
