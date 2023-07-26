@@ -1,6 +1,5 @@
 ﻿using Boilerplate.Extensions;
 using Boilerplate.Services.Thing;
-using Boilerplate.Utilities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -8,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.AddConfigurationOptions();
 builder.AddLogging();
 builder.AddInternalServices();
+builder.AddCaerusClient();
 
 var application = builder.Build();
 
@@ -18,5 +18,12 @@ await application.StartAsync();
 
 var thingService = application.Services.GetRequiredService<IThingService>();
 
-var thing = thingService.GetTheThing();
-Console.WriteLine(thing.Result.StringyThing);
+try
+{
+    await thingService.TestStuffHere();
+}
+catch (Exception ex)
+{
+    //break here in case of exception
+    Console.WriteLine("what happened", ex);
+}

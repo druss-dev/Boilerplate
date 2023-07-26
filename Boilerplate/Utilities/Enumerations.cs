@@ -5,7 +5,7 @@ namespace Boilerplate.Utilities;
 
 public class Enumerations
 {
-    [JsonConverter(typeof (StringEnumConverter))]
+    //[JsonConverter(typeof (StringEnumConverter))]
     public enum TheThingEnum
     {
         ThingOne = 1,
