@@ -4,6 +4,9 @@ using Boilerplate.Repositories.Client;
 using Boilerplate.Repositories.Thingabase;
 using Boilerplate.Services.Thing;
 using Boilerplate.Utilities;
+using Caerus.Client;
+using Caerus.Client.Internal;
+using Caerus.Client.Models.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Data.SqlClient;
 using Microsoft.Data.SqlClient.AlwaysEncrypted.AzureKeyVaultProvider;
@@ -65,6 +68,28 @@ public static class ProgramExtensions
         services.AddTransient<IThingabaseRepository, ThingabaseRepository>();
        
         return services;
+    }
+
+    /// <summary>
+    /// configures the caerus client
+    /// </summary>
+    public static void AddCaerusClient(this WebApplicationBuilder builder)
+    {
+        var applicationOptions = builder.Services.BuildServiceProvider().GetRequiredService<IOptions<ApplicationOptions>>().Value;
+        var caerusClientConfig = new CaerusClientConfig
+        {
+            UserName = applicationOptions.CaerusClientUsername!,
+            Password = applicationOptions.CaerusClientPassword!,
+            CaerusBaseUri = applicationOptions.CaerusApiBaseUrl!
+        };
+        builder.Services.AddCaerusClient(caerusClientConfig);
+        
+
+        builder.Services.AddCaerusInternalClient(
+            applicationOptions.InternalApiBaseUrl,
+            applicationOptions.InternalServiceUserName,
+            applicationOptions.InternalServicePassword);
+
     }
 
     /// <summary>

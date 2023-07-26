@@ -5,6 +5,12 @@
       "commandName": "Project",
       "environmentVariables": {
         "APPLICATION__NAME": "Boilerplate",
+        "APPLICATION__CAERUSAPIBASEURL": "",
+        "APPLICATION__CAERUSCLIENTUSERNAME": "",
+        "APPLICATION__CAERUSCLIENTPASSWORD": "",
+        "APPLICATION__INTERNALAPIBASEURL": "",
+        "APPLICATION__INTERNALSERVICEPASSWORD": "",
+        "APPLICATION__INTERNALSERVICEUSERNAME": "",
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
